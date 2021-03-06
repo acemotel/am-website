@@ -10,11 +10,12 @@ const squares = (p) => {
         p.createCanvas(canvSize, canvSize, p.WEBGL);
         p.noStroke();
         p.setupRects(15);
+        //p.noLoop();
 
     }
 
     p.draw = () => {
-        if (p.random() < 0.5) {
+        if (!window.navhover) {
             p.background(255, 0);
         }
         p.fill(0);

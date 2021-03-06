@@ -60,3 +60,27 @@ ul > li > a:hover{
     left: 30%;
 }
 
+.music_player {
+    bottom: 15%;
+    left: 20%;
+    width:300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.music_player > img {
+    height: 30px;
+    width: 50px;
+}
+
+.music_player > img:hover {
+    cursor: pointer;
+}
+
+.bg_img {
+    height: 370px;;
+    opacity: 0.06;
+    top: 62%;
+}
