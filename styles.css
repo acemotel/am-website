@@ -1,11 +1,24 @@
+
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, serif;
+    padding: 20px;
+}
+
+body > * {
+    position: absolute;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 3.5em;
+    margin:0;
 }
 
 ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    font-size: 1.25em;
 }
 
 ul > li > a {
@@ -17,7 +30,28 @@ ul > li > a:hover{
     cursor: pointer;
 }
 
-#tree {
+.sketch{
     display: inline-block;
-    border: dashed 2px #000;
 }
+
+#tree {
+    border: dashed 2px #000;
+    bottom: 10%;
+    right: 10%;
+}
+
+#squares {
+    top:20%;
+}
+
+.headerName {
+    top: 5%;
+    left: 12%;
+    width:300px;
+}
+
+.nav {
+    top: 30%;
+    left: 30%;
+}
+

@@ -15,7 +15,7 @@ const squares = (p) => {
 
     p.draw = () => {
         if (p.random() < 0.5) {
-            p.background(255);
+            p.background(255, 0);
         }
         p.fill(0);
 
