@@ -1,0 +1,23 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul > li > a {
+    text-decoration: none;
+}
+
+ul > li > a:hover{
+    background-color: #000;
+    cursor: pointer;
+}
+
+#tree {
+    display: inline-block;
+    border: dashed 2px #000;
+}
