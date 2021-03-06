@@ -44,6 +44,11 @@ ul > li > a:hover{
     top:20%;
 }
 
+#img_glitch {
+    right: 8%;
+    top: 8%;
+}
+
 .headerName {
     top: 5%;
     left: 12%;
