@@ -84,3 +84,17 @@ ul > li > a:hover{
     opacity: 0.06;
     top: 62%;
 }
+
+.side_text {
+    font-size: 0.8em;
+}
+
+#quote {
+    writing-mode: tb-rl;
+    right: 1%;
+}
+
+#code {
+    bottom: 0;
+    right: 1%;
+}

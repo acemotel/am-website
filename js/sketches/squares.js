@@ -3,8 +3,10 @@ const squares = (p) => {
     const canvSize = 400;
 
     let rects = [];
-    let speed = 1.5;
+    let speed = 0.75;
     let whichAxis = 'Y';
+    let opCount = 40;
+    let increaseOpCount = true;
 
     p.setup = () => {
         p.createCanvas(canvSize, canvSize, p.WEBGL);
@@ -18,7 +20,7 @@ const squares = (p) => {
         if (!window.navhover) {
             p.background(255, 0);
         }
-        p.fill(0);
+        p.fill(0, opCount);
 
         //rotateZ(millis() / 1000);
         rects.forEach((r) => {
@@ -29,6 +31,20 @@ const squares = (p) => {
             p.rect(r.x, r.y, r.size, r.size)
             p.pop();
         });
+
+        if (increaseOpCount) {
+            opCount++;
+        }
+        else {
+            opCount--;
+        }
+        
+        if (opCount === 50){
+            increaseOpCount = true;
+        }
+        else if (opCount === 300) {
+            increaseOpCount = false;
+        }
 
     }
 
