@@ -2,7 +2,15 @@ import tree from './sketches/tree.js';
 import squares from './sketches/squares.js';
 import img_glitch from './sketches/img_glitch.js';
 
-window.navhover = false;
+const options = {
+	"cursorOuter": "circle-basic",
+	"hoverEffect": "circle-move",
+	"hoverItemMove": false,
+	"defaultCursor": false,
+	"outerWidth": 1,
+	"outerHeight": 1
+      };
+magicMouse(options);
 
 //let img_glitch_sketch = new p5(img_glitch, 'img_glitch');
 let tree_sketch = new p5(tree, 'tree');

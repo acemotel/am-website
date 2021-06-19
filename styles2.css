@@ -24,7 +24,6 @@ ul > li > a {
 
 ul > li > a:hover{
     background-color: #000;
-    cursor: pointer;
 }
 
 .container {
@@ -45,4 +44,19 @@ ul > li > a:hover{
     position: absolute;
     bottom: 0;
     right: 1%;
+}
+
+/* Overwrite magic mouse colour */
+body #magicMouseCursor {
+    border: 1px solid #000 !important;
+}
+body #magicPointer {
+    background: #000 !important;
+}
+body #magicPointer.pointer-blur {
+    border: 1px solid #000;
+    box-shadow: 0px 0px 15px -5px #000 !important; 
+}
+body #magicPointer.pointer-overlay {
+    box-shadow: 0px 0px 15px -5px #000 !important; 
 }
