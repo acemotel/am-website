@@ -25,6 +25,7 @@ ul > li > a {
 
 ul > li > a:hover{
     background-color: #000;
+    cursor: none;
 }
 
 .container {
