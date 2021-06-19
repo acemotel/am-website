@@ -1,63 +1,50 @@
 <!doctype html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
 
-  <title>Ace Motel</title>
-  <meta name="description" content="Ace Motel">
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="styles.css?v=1.0">
+<head>
+    <meta charset="utf-8">
+
+    <title>ACE MOTEL</title>
+    <meta name="description" content="Ace Motel">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiri">
+    <link rel="stylesheet" href="styles.css?v=1.0">
+    <link rel="stylesheet" href="https://res.cloudinary.com/veseylab/raw/upload/v1613706377/magicmouse/magic-mouse-1.1.css" />
+    <script type="text/javascript" src="https://res.cloudinary.com/veseylab/raw/upload/v1613706377/magicmouse/magic_mouse-1.1.js"></script>
+  
 </head>
 
 <body>
 
-  <div class="headerName">
-    <h1>ACE</h1>
-    <h1 style="float:right;">MOTEL</h1>
-  </div>
-
-  <div class="nav">
-    <ul>
-      <li><a>spotify</a></li>
-      <li><a>soundcloud</a></li>
-      <li><a>bandcamp</a></li>
-      <br>
-      <li><a>instagram</a></li>
-      <li><a>facebook</a></li>
-      <br>
-      <li><a>contact / enquiries</a></li>
-    </ul>
-  </div>
-
-    <img class="bg_img" src="./assets/imgs/img2.jpeg"/>
-
-    <div id="img_glitch"></div>
-
-    <div id="tree" class="sketch"></div>
-
-    <div id="squares" class="sketch"></div>
-
-    <div class="music_player">
-      <p style="font-style: italic;">
-        Generative music definition lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-      </p>
-      <img id="play" src="assets/icons/play.svg" />
-      <img id="stop" src="assets/icons/stop.svg" style="display:none;"/>
-      <div style="height:60px;">
-        <p id="music_text" style="display: none;">
-          now playing:
-          <br>
-          a walk on the beach
-        </p>
+    <div class="headerName am">
+        <h1>ACE <br> <span style="margin-left:50px;" >MOTEL</span> </h1>
     </div>
+    <div class="container">
+        <div class="nav">
+            <ul>
+                <li class="am"><a href="https://open.spotify.com/artist/0iZuZGVuE7WvXqQmju7JHz?si=X05EP-F5RseFrDoSyPUfzA" target="_blank">spotify</a></li>
+                <li class="am"><a href="https://soundcloud.com/acemotel" target="_blank">soundcloud</a></li>
+                <li class="am"><a href="https://acemotel.bandcamp.com/" target="_blank">bandcamp</a></li>
+                <br>
+                <li class="am"><a href="https://www.instagram.com/acemotel_/" target="_blank">instagram</a></li>
+                <li class="am"><a href="https://www.facebook.com/acemotel" target="_blank">facebook</a></li>
+                <br>
+                <li class="am"><a>contact / enquiries</a></li>
+                <br>
+                <li id="play" class="am"><a>play</a></li>
+            </ul>
+        </div>
+
+        <div id="tree" class="sketch"></div>
+        
     </div>
 
-    <p class="side_text" id="quote">"lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor" - John Doe</p>
     <p class="side_text" id="code">AM001</p>
 
-  <script src="js/external/p5.min.js"></script>
-  <script src="js/external/p5.glitch.js"></script>
-  <script type="module" src="js/site.js"></script>
+    <script src="js/external/p5.min.js"></script>
+    <script src="js/external/tone.min.js"></script>
+    <script src="js/music/a_walk_on_the_beach.js"></script>
+    <script type="module" src="js/site.js"></script>
 </body>
+
 </html>

@@ -1,16 +1,13 @@
 
 body {
-    font-family: "Times New Roman", Times, serif;
-    padding: 20px;
-}
-
-body > * {
-    position: absolute;
+    font-family: serif;
+    font-size: 13px;
+    padding: 60px 200px 20px 200px;
 }
 
 h1 {
     font-weight: 100;
-    font-size: 3.5em;
+    font-size: 2.25em;
     margin:0;
 }
 
@@ -23,78 +20,46 @@ ul {
 
 ul > li > a {
     text-decoration: none;
+    color: #000;
+    cursor: none !important;
 }
 
 ul > li > a:hover{
     background-color: #000;
-    cursor: pointer;
+    cursor: none !important;
 }
 
-.sketch{
-    display: inline-block;
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #tree {
-    border: dashed 2px #000;
+    border: dashed 2px #afafaf;
     bottom: 10%;
     right: 10%;
-}
-
-#squares {
-    top:20%;
-}
-
-#img_glitch {
-    right: 8%;
-    top: 8%;
-}
-
-.headerName {
-    top: 5%;
-    left: 12%;
-    width:300px;
-}
-
-.nav {
-    top: 30%;
-    left: 30%;
-}
-
-.music_player {
-    bottom: 15%;
-    left: 20%;
-    width:300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.music_player > img {
-    height: 30px;
-    width: 50px;
-}
-
-.music_player > img:hover {
-    cursor: pointer;
-}
-
-.bg_img {
-    height: 370px;;
-    opacity: 0.06;
-    top: 62%;
-}
-
-.side_text {
-    font-size: 0.8em;
-}
-
-#quote {
-    writing-mode: tb-rl;
-    right: 1%;
+    margin-left: 125px;
 }
 
 #code {
+    font-size: .75em;
+    position: absolute;
     bottom: 0;
     right: 1%;
+}
+
+/* Overwrite magic mouse colour */
+body #magicMouseCursor {
+    border: 1px solid #000 !important;
+}
+body #magicPointer {
+    background: #000 !important;
+}
+body #magicPointer.pointer-blur {
+    border: 1px solid #000;
+    box-shadow: 0px 0px 15px -5px #000 !important; 
+}
+body #magicPointer.pointer-overlay {
+    box-shadow: 0px 0px 15px -5px #000 !important; 
 }
