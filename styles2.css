@@ -21,11 +21,12 @@ ul {
 ul > li > a {
     text-decoration: none;
     color: #000;
+    cursor: none !important;
 }
 
 ul > li > a:hover{
     background-color: #000;
-    cursor: none;
+    cursor: none !important;
 }
 
 .container {
