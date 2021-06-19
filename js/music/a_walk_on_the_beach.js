@@ -35,7 +35,7 @@ const sampler = new Tone.Sampler({
         G4: "G4.wav",
         G5: "G5.wav",
     },
-    baseUrl: "/assets/samples/"
+    baseUrl: "assets/samples/"
 }).connect(feedbackDelay);
 const texture = new Tone.Sampler({
     urls: {
@@ -45,7 +45,7 @@ const texture = new Tone.Sampler({
         C6: "4.wav",
         C7: "vinyl_crackle.wav"
     },
-    baseUrl: "/assets/samples/textures/"
+    baseUrl: "assets/samples/textures/"
 }).connect(feedbackDelay);
 const modorgan = new Tone.Sampler({
     urls: {
@@ -54,7 +54,7 @@ const modorgan = new Tone.Sampler({
         F2: "F2.wav",
         A2: "A2.wav",
     },
-    baseUrl: "/assets/samples/modorgan/",
+    baseUrl: "assets/samples/modorgan/",
     attack: 2,
     release: 3,
     curve: "linear"
