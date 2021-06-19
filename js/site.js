@@ -8,28 +8,21 @@ window.navhover = false;
 let tree_sketch = new p5(tree, 'tree');
 //let square_sketch = new p5(squares, 'squares');
 
-const play = () => {
-    console.log('click')
-    document.getElementById('play').style.display = 'none';
-    document.getElementById('stop').style.display = 'block';
-    document.getElementById('music_text').style.display = 'block';
+let isPlaying = false;
+document.getElementById("play").onclick = () => {
+    if (!isPlaying){
+        awotb_play();
+        isPlaying = true;
+    }
+    else {
+        awotb_stop();
+        isPlaying = false;
+    }
 }
 
-const stop = () => {
-    document.getElementById('stop').style.display = 'none';
-    document.getElementById('play').style.display = 'block';
-    document.getElementById('music_text').style.display = 'none';
+function play() {
+    
 }
-
-const nav_enter = () => {
-    window.navhover = true;
-}
-
-const nav_out = () => {
-    window.navhover = false;
-}
-
-
 
 let amCode = document.getElementById("code");
 // Randomly generate the code AMxxx
