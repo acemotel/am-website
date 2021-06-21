@@ -66,3 +66,13 @@ body #magicPointer.pointer-blur {
 body #magicPointer.pointer-overlay {
     box-shadow: 0px 0px 15px -5px #000 !important; 
 }
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+    #tree {
+        margin: 50px 0;
+    }
+}
