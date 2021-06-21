@@ -29,10 +29,13 @@ ul > li > a:hover{
     cursor: none !important;
 }
 
+#play {
+    font-weight: 600;
+}
+
 .container {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 #tree {
