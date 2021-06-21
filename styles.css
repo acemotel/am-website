@@ -52,7 +52,7 @@ ul > li > a:hover{
 
 #code {
     font-size: .75em;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 1%;
 }
