@@ -40,7 +40,7 @@ const tree = (p) => {
     p.setup = () => {
         angle = p.random(-30, 30);
         p.frameRate(1);
-        p.createCanvas(300, 300);
+        p.createCanvas(400, 400);
         p.angleMode(p.DEGREES);
         p.stroke(0, 100);
         p.turtle();
