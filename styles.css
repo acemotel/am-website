@@ -45,6 +45,11 @@ ul > li > a:hover{
     margin-left: 125px;
 }
 
+#tree > canvas {
+    width: 300px !important;
+    height: 300px !important;
+}
+
 #code {
     font-size: .75em;
     position: absolute;
