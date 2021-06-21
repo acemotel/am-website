@@ -13,7 +13,6 @@ const options = {
 magicMouse(options);
 
 //let img_glitch_sketch = new p5(img_glitch, 'img_glitch');
-let tree_sketch = new p5(tree, 'tree');
 //let square_sketch = new p5(squares, 'squares');
 
 let isPlaying = false;
@@ -46,6 +45,8 @@ let elementSkew = document.getElementsByClassName("am");
     let valueY = Math.ceil(Math.random() * 2) * (Math.round(Math.random()) ? 1 : -1)
     el.style.transform = `skew(${valueX}deg, ${valueY}deg)`;
 });
+
+let tree_sketch = new p5(tree, 'tree');
 
 // document.getElementById("play").addEventListener("click", play);
 // document.getElementById("stop").addEventListener("click", stop);
