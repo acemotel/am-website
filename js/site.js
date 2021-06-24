@@ -27,24 +27,31 @@ document.getElementById("play").onclick = () => {
     }
 }
 
-function play() {
-    
+const imgs = document.getElementsByClassName("imgs");
+
+var nav = document.getElementsByClassName("am");
+console.log(nav);
+for(let i = 0; i < nav.length; i++) {
+    nav[i].addEventListener("mouseover", function() {
+    console.log("Clicked index: " + i);
+  })
 }
 
-let amCode = document.getElementById("code");
-// Randomly generate the code AMxxx
-setInterval(() => {
-    let value = Math.floor(100 + Math.random() * 900);
-    amCode.innerHTML = "AM" + value;
-}, 100);
+
+// let amCode = document.getElementById("code");
+// // Randomly generate the code AMxxx
+// setInterval(() => {
+//     let value = Math.floor(100 + Math.random() * 900);
+//     amCode.innerHTML = "AM" + value;
+// }, 100);
 
 // give each element a random skew
-let elementSkew = document.getElementsByClassName("am");
-[].forEach.call(elementSkew, function (el) {
-    let valueX = Math.ceil(Math.random() * 2) * (Math.round(Math.random()) ? 1 : -1)
-    let valueY = Math.ceil(Math.random() * 2) * (Math.round(Math.random()) ? 1 : -1)
-    el.style.transform = `skew(${valueX}deg, ${valueY}deg)`;
-});
+// let elementSkew = document.getElementsByClassName("am");
+// [].forEach.call(elementSkew, function (el) {
+//     let valueX = Math.ceil(Math.random() * 2) * (Math.round(Math.random()) ? 1 : -1)
+//     let valueY = Math.ceil(Math.random() * 2) * (Math.round(Math.random()) ? 1 : -1)
+//     el.style.transform = `skew(${valueX}deg, ${valueY}deg)`;
+// });
 
 let tree_sketch = new p5(tree, 'tree');
 

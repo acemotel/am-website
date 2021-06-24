@@ -1,12 +1,13 @@
 
 body {
-    font-family: serif;
-    font-size: 13px;
+    font-family: sans-serif;
+    line-height: 1.75rem;
+    font-size: 14px;
     padding: 60px 200px 20px 200px;
 }
 
 h1 {
-    font-weight: 100;
+    font-weight: 400;
     font-size: 2.25em;
     margin:0;
 }
@@ -36,6 +37,11 @@ ul > li > a:hover{
 .container {
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.headerName {
+    margin-bottom: 3rem;
 }
 
 #tree {
@@ -55,6 +61,22 @@ ul > li > a:hover{
     position: fixed;
     bottom: 0;
     right: 1%;
+}
+
+.imgs {
+    position: absolute;
+    display: none;
+}
+
+#img1 {
+    top: 0;
+    height: 17rem;
+}
+
+#img2 {
+    height: 14rem;
+    margin-left: 14rem;
+    top: 6rem;
 }
 
 /* Overwrite magic mouse colour */
