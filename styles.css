@@ -113,7 +113,7 @@ ul > li > a:hover{
     top: 18rem;
 }
 
-.imgContainer {
+#imgContainer {
     left: 50%;
     height: 100vh;
     width: 100vw;
@@ -154,5 +154,9 @@ body #magicPointer.pointer-overlay {
     }
     #tree {
         margin: 50px 0;
+    }
+
+    #imgContainer {
+        display: none;
     }
 }

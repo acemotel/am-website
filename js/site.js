@@ -40,30 +40,40 @@ document.body.onkeyup = function(e){
     }
 }
 
-const imgs = document.getElementsByClassName("imgs");
-
-const nav = document.getElementsByClassName("am");
-const squaresel = document.getElementById("squares");
-
-for(let i = 1; i < nav.length; i++) {
-    nav[i].addEventListener("mouseover", function () {
-        imgs[i-1].style.display = 'block';
-        if (i == 3) {
-            squaresel.style.display = 'block';
-        }
-        // for (let j = 0; j <= i; j++) {
-        //     imgs[j].style.display = 'block';
-        // }
-    });
-    nav[i].addEventListener("mouseout", function () {
-        // for (let j = 0; j <= i; j++) {
-        //     imgs[j].style.display = 'none';
-        // }
-        imgs[i-1].style.display = 'none';
-        squaresel.style.display = 'none';
-    });
+// check if this element is visible to see if its mobile or not
+const imgContainer = document.getElementById("imgContainer");
+let isMobile = false;
+console.log(imgContainer.style.display)
+if (imgContainer.style.display === 'none') {
+    isMobile = true;
 }
 
+const nav = document.getElementsByClassName("am");
+
+if (!isMobile) {
+    console.log("no")
+    const imgs = document.getElementsByClassName("imgs");
+    const squaresel = document.getElementById("squares");
+
+    for (let i = 1; i < nav.length; i++) {
+        nav[i].addEventListener("mouseover", function () {
+            imgs[i - 1].style.display = 'block';
+            if (i == 3) {
+                squaresel.style.display = 'block';
+            }
+            // for (let j = 0; j <= i; j++) {
+            //     imgs[j].style.display = 'block';
+            // }
+        });
+        nav[i].addEventListener("mouseout", function () {
+            // for (let j = 0; j <= i; j++) {
+            //     imgs[j].style.display = 'none';
+            // }
+            imgs[i - 1].style.display = 'none';
+            squaresel.style.display = 'none';
+        });
+    }
+}
 
 function play() {
     
