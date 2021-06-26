@@ -3,7 +3,7 @@ const squares = (p) => {
     const canvSize = 400;
 
     let rects = [];
-    let speed = 0.75;
+    let speed = 1.25;
     let whichAxis = 'Y';
     let opCount = 40;
     let increaseOpCount = true;
@@ -20,7 +20,7 @@ const squares = (p) => {
         if (!window.navhover) {
             p.background(255, 0);
         }
-        p.fill(0, opCount);
+        p.fill(0);
 
         //rotateZ(millis() / 1000);
         rects.forEach((r) => {

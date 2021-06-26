@@ -13,7 +13,7 @@ const options = {
 magicMouse(options);
 
 //let img_glitch_sketch = new p5(img_glitch, 'img_glitch');
-//let square_sketch = new p5(squares, 'squares');
+
 
 let isPlaying = false;
 document.getElementById("play").onclick = () => {
@@ -27,6 +27,44 @@ document.getElementById("play").onclick = () => {
     }
 }
 
+document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+        if (!isPlaying){
+            awotb_play();
+            isPlaying = true;
+        }
+        else {
+            awotb_stop();
+            isPlaying = false;
+        }
+    }
+}
+
+const imgs = document.getElementsByClassName("imgs");
+
+const nav = document.getElementsByClassName("am");
+const squaresel = document.getElementById("squares");
+
+for(let i = 1; i < nav.length; i++) {
+    nav[i].addEventListener("mouseover", function () {
+        imgs[i-1].style.display = 'block';
+        if (i == 3) {
+            squaresel.style.display = 'block';
+        }
+        // for (let j = 0; j <= i; j++) {
+        //     imgs[j].style.display = 'block';
+        // }
+    });
+    nav[i].addEventListener("mouseout", function () {
+        // for (let j = 0; j <= i; j++) {
+        //     imgs[j].style.display = 'none';
+        // }
+        imgs[i-1].style.display = 'none';
+        squaresel.style.display = 'none';
+    });
+}
+
+
 function play() {
     
 }
@@ -39,14 +77,15 @@ setInterval(() => {
 }, 100);
 
 // give each element a random skew
-let elementSkew = document.getElementsByClassName("am");
-[].forEach.call(elementSkew, function (el) {
+[].forEach.call(nav, function (el) {
     let valueX = Math.ceil(Math.random() * 2) * (Math.round(Math.random()) ? 1 : -1)
     let valueY = Math.ceil(Math.random() * 2) * (Math.round(Math.random()) ? 1 : -1)
     el.style.transform = `skew(${valueX}deg, ${valueY}deg)`;
 });
 
+
 let tree_sketch = new p5(tree, 'tree');
+let square_sketch = new p5(squares, 'squares');
 
 // document.getElementById("play").addEventListener("click", play);
 // document.getElementById("stop").addEventListener("click", stop);

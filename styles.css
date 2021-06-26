@@ -57,6 +57,70 @@ ul > li > a:hover{
     right: 1%;
 }
 
+.imgs {
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+
+#img1 {
+    top: 0;
+    height: 17rem;
+}
+
+#img2 {
+    height: 14rem;
+    margin-left: 14rem;
+    top: 6rem;
+}
+
+#img3 {
+    height: 18rem;
+    margin-left: 10rem;
+    top: 10rem;
+}
+
+#img3 {
+    height: 18rem;
+    margin-left: 10rem;
+    top: 10rem;
+}
+
+#squares {
+    position: absolute;
+    display: none;
+    height: 18rem;
+    margin-left: 12rem;
+    top: 15rem;
+    z-index: 10;
+}
+
+#img4 {
+    height: 15rem;
+    margin-left: 8rem;
+    top: 15rem;
+}
+
+#img5 {
+    height: 20rem;
+    margin-left: 1rem;
+    top: 16rem;
+}
+
+#img6 {
+    height: 24rem;
+    margin-left: 2rem;
+    top: 18rem;
+}
+
+.imgContainer {
+    left: 50%;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+}
+
 /* Overwrite magic mouse colour */
 body #magicMouseCursor {
     border: 1px solid #000 !important;
