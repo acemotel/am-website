@@ -32,9 +32,17 @@ const imgs = document.getElementsByClassName("imgs");
 var nav = document.getElementsByClassName("am");
 console.log(nav);
 for(let i = 0; i < nav.length; i++) {
-    nav[i].addEventListener("mouseover", function() {
-    console.log("Clicked index: " + i);
-  })
+    nav[i].addEventListener("mouseover", function () {
+        imgs[i].style.display = 'block';
+        // for (let j = 0; j <= i; j++) {
+        //     imgs[j].style.display = 'block';
+        // }
+    });
+    nav[i].addEventListener("mouseout", function () {
+        for (let j = 0; j <= i; j++) {
+            imgs[j].style.display = 'none';
+        }
+    });
 }
 
 
