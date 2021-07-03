@@ -69,8 +69,10 @@ if (!isMobile) {
             // for (let j = 0; j <= i; j++) {
             //     imgs[j].style.display = 'none';
             // }
-            imgs[i - 1].style.display = 'none';
-            squaresel.style.display = 'none';
+            setTimeout(() => {
+                imgs[i - 1].style.display = 'none';
+                squaresel.style.display = 'none';
+            },100);
         });
     }
 }
