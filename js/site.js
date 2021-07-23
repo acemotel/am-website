@@ -13,7 +13,8 @@ const options = {
 magicMouse(options);
 
 //let img_glitch_sketch = new p5(img_glitch, 'img_glitch');
-
+let tree_sketch = new p5(tree, 'tree');
+let square_sketch = new p5(squares, 'squares');
 
 let isPlaying = false;
 document.getElementById("play").onclick = () => {
@@ -81,23 +82,22 @@ function play() {
     
 }
 
-let amCode = document.getElementById("code");
-// Randomly generate the code AMxxx
-setInterval(() => {
-    let value = Math.floor(100 + Math.random() * 900);
-    amCode.innerHTML = "AM" + value;
-}, 100);
+// let amCode = document.getElementById("code");
+// // Randomly generate the code AMxxx
+// setInterval(() => {
+//     let value = Math.floor(100 + Math.random() * 900);
+//     amCode.innerHTML = "AM" + value;
+// }, 100);
 
 // give each element a random skew
-[].forEach.call(nav, function (el) {
-    let valueX = Math.ceil(Math.random() * 2) * (Math.round(Math.random()) ? 1 : -1)
-    let valueY = Math.ceil(Math.random() * 2) * (Math.round(Math.random()) ? 1 : -1)
-    el.style.transform = `skew(${valueX}deg, ${valueY}deg)`;
-});
+// [].forEach.call(nav, function (el) {
+//     let valueX = Math.ceil(Math.random() * 2) * (Math.round(Math.random()) ? 1 : -1)
+//     let valueY = Math.ceil(Math.random() * 2) * (Math.round(Math.random()) ? 1 : -1)
+//     el.style.transform = `skew(${valueX}deg, ${valueY}deg)`;
+// });
 
 
-let tree_sketch = new p5(tree, 'tree');
-let square_sketch = new p5(squares, 'squares');
+
 
 // document.getElementById("play").addEventListener("click", play);
 // document.getElementById("stop").addEventListener("click", stop);
