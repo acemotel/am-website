@@ -163,6 +163,19 @@ body #magicPointer.pointer-overlay {
     }
 
     #imgContainer {
-        display: none;
+        left: unset;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .imgs {
+        position: unset;
+        display: unset !important;
+        width: 100%;
+        height: unset;
+        margin: 10px 0 !important;
     }
 }
