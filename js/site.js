@@ -12,46 +12,46 @@ const options = {
       };
 magicMouse(options);
 
+// check if this element is visible to see if its mobile or not
+const imgContainer = document.getElementById("imgContainer");
+let isMobile = false;
+if (imgContainer.style.display === 'none') {
+    isMobile = true;
+}
+
 //let img_glitch_sketch = new p5(img_glitch, 'img_glitch');
 let tree_sketch = new p5(tree, 'tree');
 let square_sketch = new p5(squares, 'squares');
 
 let isPlaying = false;
 document.getElementById("play").onclick = () => {
-    if (!isPlaying){
-        awotb_play();
-        document.getElementById("squares").style.display = 'block';
-        isPlaying = true;
-    }
-    else {
-        awotb_stop();
-        document.getElementById("squares").style.display = 'none';
-        isPlaying = false;
-    }
+    playTrack();
 }
 
 document.body.onkeyup = function(e){
     if(e.keyCode == 32){
-        if (!isPlaying){
-            awotb_play();
-            document.getElementById("squares").style.display = 'block';
-            isPlaying = true;
-        }
-        else {
-            awotb_stop();
-            document.getElementById("squares").style.display = 'none';
-            isPlaying = false;
-        }
+        playTrack();
     }
 }
 
-// check if this element is visible to see if its mobile or not
-const imgContainer = document.getElementById("imgContainer");
-let isMobile = false;
-console.log(imgContainer.style.display)
-if (imgContainer.style.display === 'none') {
-    isMobile = true;
+const playTrack = () => {
+    if (!isPlaying){
+        awotb_play();
+        if (!isMobile) {
+            document.getElementById("squares").style.display = 'block';
+        }
+        isPlaying = true;
+    }
+    else {
+        awotb_stop();
+        if (!isMobile) {
+         document.getElementById("squares").style.display = 'none';
+        }
+        isPlaying = false;
+    }
 }
+
+
 
 const nav = document.getElementsByClassName("am");
 

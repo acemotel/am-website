@@ -182,7 +182,7 @@ body #magicPointer.pointer-overlay {
         position: unset;
         display: unset !important;
         width: 100%;
-        height: unset;
+        height: unset !important;
         margin: 10px 0 !important;
     }
 }
