@@ -56,7 +56,6 @@ if (imgContainer.style.display === 'none') {
 const nav = document.getElementsByClassName("am");
 
 if (!isMobile) {
-    console.log("no")
     const imgs = document.getElementsByClassName("imgs");
     
 
