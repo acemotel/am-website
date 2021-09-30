@@ -1,6 +1,10 @@
 const cPent = ['C', 'D', 'E', 'G', 'A'];
 const modScale = ['E2', 'F2', 'A2']; // This excludes C as it will always be played
 
+// array contaiing all wave data for different instruments
+// this is sued by wave.js to draw a waveform for each connected source
+const waveData = [];
+
 const feedbackDelay = new Tone.FeedbackDelay("4tn", 0.2).toDestination();
 const reverb = new Tone.Reverb(4).toDestination();
 // create a new synth and route the output to master
@@ -60,18 +64,35 @@ const modorgan = new Tone.Sampler({
     curve: "linear"
 }).toDestination();
 
+const samplerWave = new Tone.Waveform();
+sampler.connect(samplerWave);
+const synthWave = new Tone.Waveform();
+synth.connect(synthWave);
+const textWave = new Tone.Waveform();
+texture.connect(textWave);
+const modWave = new Tone.Waveform();
+modorgan.connect(modWave);
+
+waveData.push(samplerWave);
+waveData.push(synthWave);
+waveData.push(textWave);
+waveData.push(modWave);
+
 texture.volume.value = -35;
 let c = 0;
 let prevModNote = "";
 const loop = new Tone.Loop(function (time) {
     let note = randomNoteC(3, 5);
     let delay = Math.random() / 2;
+    
     if (randomIntFromInterval(0, 3) === 0) {
+       // drawNote(time + delay);
         sampler.triggerAttackRelease(note, "1m", time + delay, Math.random() * 0.7);
         synth.triggerAttackRelease(note, "4n", time + delay);
         texture.triggerAttackRelease(randomNoteC(2, 6), "1m", time + delay);
     }
     if (c % 4 === 0 && randomIntFromInterval(0, 1) === 0) {
+        //drawNote(time + delay);
         let bassNoteIndex = randomIntFromInterval(0, 4);
         // Play the bass note and a note 3 up from it (5th chords eg A5)
         sampler.triggerAttackRelease(`${cPent[bassNoteIndex]}2`, "2m", time + delay, Math.random());
@@ -103,6 +124,16 @@ const loop = new Tone.Loop(function (time) {
 Tone.Transport.bpm.value = 80;
 Tone.Master.volume.value = 15;
 
+const drawNote = (time) => {
+    Tone.Draw.schedule(function(){
+        //this callback is invoked from a requestAnimationFrame
+        //and will be invoked close to AudioContext time
+        noteHit();
+        console.log("played");
+
+    }, time);
+}
+
 const awotb_play = () => {
     if (Tone.context.state !== 'running') {
         Tone.context.resume();
@@ -129,8 +160,8 @@ const randomNoteC = (x, y) => {
     return note + oct;
 }
 
+
 const randomIntFromInterval = (min, max) => { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
 

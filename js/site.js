@@ -1,6 +1,4 @@
 import tree from './sketches/tree.js';
-import squares from './sketches/squares.js';
-import img_glitch from './sketches/img_glitch.js';
 
 const options = {
 	"cursorOuter": "circle-basic",
@@ -19,9 +17,9 @@ if (imgContainer.style.display === 'none') {
     isMobile = true;
 }
 
+
 //let img_glitch_sketch = new p5(img_glitch, 'img_glitch');
 let tree_sketch = new p5(tree, 'tree');
-let square_sketch = new p5(squares, 'squares');
 
 let isPlaying = false;
 document.getElementById("play").onclick = () => {
@@ -37,16 +35,10 @@ document.body.onkeyup = function(e){
 const playTrack = () => {
     if (!isPlaying){
         awotb_play();
-        if (!isMobile) {
-            document.getElementById("squares").style.display = 'block';
-        }
         isPlaying = true;
     }
     else {
         awotb_stop();
-        if (!isMobile) {
-         document.getElementById("squares").style.display = 'none';
-        }
         isPlaying = false;
     }
 }

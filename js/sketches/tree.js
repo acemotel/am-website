@@ -59,7 +59,7 @@ const tree = (p) => {
     }
 
     p.turtle = () => {
-        p.background(255);
+        p.background(255, 0);
         p.resetMatrix();
         p.translate(p.width / 2, p.height - 20);
         for (let i = 0; i < sentence.length; i++) {
@@ -80,7 +80,7 @@ const tree = (p) => {
     }
 
     p.reset = () => {
-        p.background(255);
+        p.clear();
         sentence = axiom;
         angle = p.random(-30, 30);
         len = 100;

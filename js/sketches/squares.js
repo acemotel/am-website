@@ -1,81 +1,77 @@
-const squares = (p) => {
+const canvSize = 400;
 
-    const canvSize = 400;
+let squares = [];
 
-    let rects = [];
-    let speed = 1.25;
-    let whichAxis = 'Y';
-    let opCount = 40;
-    let increaseOpCount = true;
+setup = () => {
+    let canv = createCanvas(canvSize, canvSize, WEBGL);
+    canv.parent('squares');
+    noStroke();
+    setupRects(15);
+    console.log(squares);
+}
 
-    p.setup = () => {
-        p.createCanvas(canvSize, canvSize, p.WEBGL);
-        p.noStroke();
-        p.setupRects(15);
-        //p.noLoop();
-
+draw = () => {
+    if (!window.navhover) {
+        background(255, 0);
     }
+    fill(255, 0);
 
-    p.draw = () => {
-        if (!window.navhover) {
-            p.background(255, 0);
-        }
-        p.fill(0);
+    //rotateZ(millis() / 1000);
+    squares.forEach((square) => {
+        square.toRender && square.render();
+    });
 
-        //rotateZ(millis() / 1000);
-        rects.forEach((r) => {
-            p.push();
-            let c = p.random() < 0.3 ? -1 : 1;
-            let rot = r.rot * 1;
-            p.rotateAxis(rot);
-            p.rect(r.x, r.y, r.size, r.size)
-            p.pop();
-        });
+}
 
-        if (increaseOpCount) {
-            opCount++;
-        }
-        else {
-            opCount--;
-        }
-        
-        if (opCount === 50){
-            increaseOpCount = true;
-        }
-        else if (opCount === 300) {
-            increaseOpCount = false;
-        }
-
-    }
-
-    p.setupRects = (n) => {
-        for (let i = 0; i < n; i++) {
-            let size = p.random(canvSize / 30, canvSize / 12);
-            let x = p.random(canvSize / 30, canvSize / 6);
-            let y = p.random(-canvSize / 3, canvSize / 3);
-            let rot = p.random(500, 1000);
-            rects.push({
-                x: x,
-                y: y,
-                size: size,
-                rot: rot
-            });
-        }
-    }
-
-    p.rotateAxis = (rot) => {
-        switch (whichAxis) {
-            case 'X':
-                p.rotateX(p.millis() / rot * speed);
-                break;
-            case 'Y':
-                p.rotateY(p.millis() / rot * speed);
-                break;
-            case 'Z':
-                p.rotateZ(p.millis() / rot * speed);
-                break;
-        }
+setupRects = (n) => {
+    for (let i = 0; i < n; i++) {
+        let size = random(canvSize / 30, canvSize / 12);
+        let x = random(canvSize / 30, canvSize / 6);
+        let y = random(-canvSize / 3, canvSize / 3);
+        let rot = random(500, 1000);
+        const square = new Square(x, y, size, rot);
+        squares.push(square);
     }
 }
 
-export default squares;
+noteHit = () => {
+    const sIndex = randomIntFromInterval(0, squares.length - 1);
+    squares[sIndex].setRender();
+}
+
+const randomIntFromInterval = (min, max) => { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+class Square {
+    constructor(x, y, size, rot){
+        this.x = x;
+        this.y = y;
+        this.size = size;
+        this.rot = rot;
+        this.toRender = false;
+        this.opacity = 0;
+    }
+
+    render = () => {
+        push();
+        this.rotateAxis();
+        if (this.opacity > 0) {
+            fill(0, this.opacity);
+            this.opacity -= 1;
+        }
+        rect(this.x, this.y, this.size, this.size)
+        pop();
+    }
+
+    rotateAxis = () => {
+        const speed = 1.25;
+        rotateY(millis() / this.rot * speed);
+    }
+
+    setRender = () => {
+        this.opacity = 500;
+        this.toRender = true;
+    }
+    
+}
