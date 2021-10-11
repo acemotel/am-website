@@ -36,6 +36,7 @@ const playTrack = () => {
     if (!isPlaying){
         awotb_play();
         isPlaying = true;
+        document.getElementById('wave').style.display = 'block';
     }
     else {
         awotb_stop();
