@@ -150,7 +150,7 @@ const awotb_stop = () => {
     Tone.Transport.stop();
 
     // Hide stop btn, show play btn
-    document.getElementById("play").innerHTML = "<a>listen</a>";
+    document.getElementById("play").innerHTML = `<a id="listen">listen</a>`;
 
 }
 
