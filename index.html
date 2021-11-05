@@ -23,8 +23,10 @@
     <meta name="description" content="Ace Motel">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css?v=1.0">
-    <link rel="stylesheet" href="https://res.cloudinary.com/veseylab/raw/upload/v1613706377/magicmouse/magic-mouse-1.1.css" />
-    <script type="text/javascript" src="https://res.cloudinary.com/veseylab/raw/upload/v1613706377/magicmouse/magic_mouse-1.1.js"></script>
+    <link rel="stylesheet"
+        href="https://res.cloudinary.com/veseylab/raw/upload/v1613706377/magicmouse/magic-mouse-1.1.css" />
+    <script type="text/javascript"
+        src="https://res.cloudinary.com/veseylab/raw/upload/v1613706377/magicmouse/magic_mouse-1.1.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
@@ -39,42 +41,48 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <div class="headerName am">
-        <h1>ACE <br> <span style="margin-left:38px;" >MOTEL</span> </h1>
-    </div>
-    <div class="container">
-        <div class="nav">
-            <ul>
-                <li class="am"><a href="https://open.spotify.com/artist/0iZuZGVuE7WvXqQmju7JHz?si=X05EP-F5RseFrDoSyPUfzA" target="_blank">spotify</a></li>
-                <li class="am"><a href="https://soundcloud.com/acemotel" target="_blank">soundcloud</a></li>
-                <li class="am"><a href="https://acemotel.bandcamp.com/" target="_blank">bandcamp</a></li>
-                <br>
-                <li class="am"><a href="https://www.instagram.com/acemotel_/" target="_blank">instagram</a></li>
-                <li class="am"><a href="https://www.facebook.com/acemotel" target="_blank">facebook</a></li>
-                <br>
-                <li class="am"><a href="mailto:acemotelmusic@gmail.com">contact / enquiries</a></li>
-                <br>
-                <li id="play" class="am"><a id="listen">listen</a></li>
-            </ul>
+    <div id="loader">loading...</div>
+
+    <div id="main-content">
+        <div class="headerName am">
+            <h1>ACE <br> <span style="margin-left:38px;">MOTEL</span> </h1>
+        </div>
+        <div class="container">
+            <div class="nav">
+                <ul>
+                    <li class="am"><a
+                            href="https://open.spotify.com/artist/0iZuZGVuE7WvXqQmju7JHz?si=X05EP-F5RseFrDoSyPUfzA"
+                            target="_blank">spotify</a></li>
+                    <li class="am"><a href="https://soundcloud.com/acemotel" target="_blank">soundcloud</a></li>
+                    <li class="am"><a href="https://acemotel.bandcamp.com/" target="_blank">bandcamp</a></li>
+                    <br>
+                    <li class="am"><a href="https://www.instagram.com/acemotel_/" target="_blank">instagram</a></li>
+                    <li class="am"><a href="https://www.facebook.com/acemotel" target="_blank">facebook</a></li>
+                    <br>
+                    <li class="am"><a href="mailto:acemotelmusic@gmail.com">contact / enquiries</a></li>
+                    <br>
+                    <li id="play" class="am"><a id="listen">listen</a></li>
+                </ul>
+            </div>
+
+            <div>
+
+
+                <div id="tree" class="sketch"></div>
+            </div>
+
+
         </div>
 
-        <div>
-            
-            
-            <div id="tree" class="sketch"></div>
+        <div id="imgContainer">
+            <img src="/assets/imgs/img3.png" class="imgs" id="img1" />
+            <img src="/assets/imgs/img9.jpeg" class="imgs" id="img2" />
+            <img src="/assets/imgs/img1.jpeg" class="imgs" id="img3" />
+            <div id="wave" class="sketch" style="display: none;"></div>
+            <img src="/assets/imgs/img5.png" class="imgs" id="img4" />
+            <img src="/assets/imgs/img7.jpeg" class="imgs" id="img5" />
+            <img src="/assets/imgs/img4.png" class="imgs" id="img6" />
         </div>
-        
-        
-    </div>
-    
-    <div id="imgContainer">
-        <img src="/assets/imgs/img3.png" class="imgs" id="img1" />
-        <img src="/assets/imgs/img9.jpeg" class="imgs" id="img2" />
-        <img src="/assets/imgs/img1.jpeg" class="imgs" id="img3" />
-        <div id="wave" class="sketch" style="display: none;"></div>
-        <img src="/assets/imgs/img5.png" class="imgs" id="img4" />
-        <img src="/assets/imgs/img7.jpeg" class="imgs" id="img5" />
-        <img src="/assets/imgs/img4.png" class="imgs" id="img6" />
     </div>
 
     <script src="js/external/p5.min.js"></script>

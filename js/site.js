@@ -1,5 +1,11 @@
 import tree from './sketches/tree.js';
 
+window.onload = (event) => {
+    console.log('page is fully loaded');
+    document.getElementById("loader").style.display = 'none';
+    document.getElementById("main-content").style.display = 'block';
+  };
+
 const options = {
 	"cursorOuter": "circle-basic",
 	"hoverEffect": "circle-move",
