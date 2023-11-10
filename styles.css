@@ -1,235 +1,30 @@
-html {
-    font-size: 80%;
-}
+
 body {
-    font-family: serif;
-    padding: 60px 200px 20px 200px;
-    
+    font-family: sans-serif;
 }
 
-#loader {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    font-size: 1.5rem;
-    -webkit-animation: loaderAnimation 2s infinite;
-   -moz-animation: loaderAnimation 2s infinite;
-   -o-animation: loaderAnimation 2s infinite;
-    animation: loaderAnimation 2s infinite;
-}
-
-@keyframes loaderAnimation {
-    0%   { opacity:1; }
-    50%  { opacity:0; }
-    100% { opacity:1; }
-  }
-
-#main-content {
-    display: none;
-}
-
-body:before {
-    content: '';
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(./assets/cream-paper.png);
-    background-repeat: repeat;
-    opacity: 0.15;
-}
-
-h1 {
-    font-family: 'Arial', sans-serif;
-    font-weight: 600;
-    line-height: 25px;
-    font-size: 1.75rem;
-    margin:0;
-    opacity: 0.9;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    font-size: 1.4rem;
-    opacity: 0.9;
-}
-
-ul > li > a {
-    text-decoration: none;
-    color: #000;
-    cursor: none !important;
-}
-
-ul > li > a:hover{
-    background-color: #000;
-    cursor: none !important;
-}
-
-#play {
-    font-weight: 600;
+.headings {
+    margin-bottom: 100px;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+        height: 70vh;
 }
 
-#tree {
-    border: dashed 2px #afafaf;
-    bottom: 10%;
-    right: 10%;
-    margin-left: 125px;
-    width: 300px;
-    height: 300px;
+p {
+    margin-bottom: 50px;
 }
 
-#tree > canvas {
-    width: 300px !important;
-    height: 300px !important;
+a {
+    text-decoration: underline;
+    color: black;
+    font-size: 12px;
 }
 
-#code {
-    font-size: .75em;
-    position: fixed;
-    bottom: 0;
-    right: 1%;
-}
-
-.imgs {
-    position: absolute;
-    display: none;
-    z-index: 1;
-}
-
-#img1 {
-    top: 0;
-    height: 17rem;
-}
-
-#img2 {
-    height: 14rem;
-    margin-left: 14rem;
-    top: 6rem;
-}
-
-#img3 {
-    height: 18rem;
-    margin-left: 10rem;
-    top: 10rem;
-}
-
-#img3 {
-    height: 18rem;
-    margin-left: 10rem;
-    top: 10rem;
-}
-
-#squares, #wave {
-    position: absolute;
-    display: block;
-    height: 18rem;
-    margin-left: 12rem;
-    top: 24rem;
-    z-index: 10;
-}
-
-#img4 {
-    height: 15rem;
-    margin-left: 8rem;
-    top: 15rem;
-}
-
-#img5 {
-    height: 20rem;
-    margin-left: 1rem;
-    top: 16rem;
-}
-
-#img6 {
-    height: 24rem;
-    margin-left: 2rem;
-    top: 18rem;
-}
-
-#imgContainer {
-    left: 40%;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-}
-
-/* Overwrite magic mouse colour */
-body #magicMouseCursor {
-    border: 1px solid #000 !important;
-}
-body #magicPointer {
-    background: #000 !important;
-}
-body #magicPointer.pointer-blur {
-    border: 1px solid #000;
-    box-shadow: 0px 0px 15px -5px #000 !important; 
-}
-body #magicPointer.pointer-overlay {
-    box-shadow: 0px 0px 15px -5px #000 !important; 
-}
-
-@media (max-width: 850px) {
-    body {
-        padding: 60px 100px 20px 100px;
-        font-size: 12px;
-    }
-}
-@media (max-width: 750px) {
-    body {
-        padding: 60px 50px 20px 50px;
-    }
-}
-
-@media (max-width: 600px) {
-    
-    html {
-        font-size: 70%;
-    }
-    
-    .container {
-        flex-direction: column;
-        margin-top: 50px;
-    }
-
-    .nav {
-        width: 100%;
-    }
-
-    #tree {
-        margin: 50px 0;
-    }
-
-    #imgContainer {
-        left: unset;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    #squares, #wave {
-        display: none;
-    }
-
-    .imgs {
-        position: unset;
-        display: unset !important;
-        width: 100%;
-        height: unset !important;
-        margin: 10px 0 !important;
-    }
+.links {
+    position: relative;
 }
